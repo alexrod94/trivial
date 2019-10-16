@@ -1,0 +1,170 @@
+<script>
+let jugadores = [
+    {
+        nombre: 1,
+        ciencia: false,
+        historia: false,
+        literatura: false,
+        ocio: false,
+        ganador: false
+    }, {
+        nombre: 2,
+        ciencia: false,
+        historia: false,
+        literatura: false,
+        ocio: false,
+        ganador: false
+    }
+]
+
+let ciencia = [{
+id: 0,
+pregunta: "Hola, qué tal?",
+respuesta: "Bien"
+}, {
+    id: 1,
+    pregunta: "",
+    respuesta: ""
+    }, {
+    id: 2,
+    pregunta: "",
+    respuesta: ""
+    }
+]
+
+let historia = [{
+    id: 0,
+    pregunta: "",
+    respuesta: ""
+    }, {
+        id: 1,
+        pregunta: "",
+        respuesta: ""
+        }, {
+        id: 2,
+        pregunta: "",
+        respuesta: ""
+        }
+    ]
+
+let literatura = [{
+    id: 0,
+    pregunta: "",
+    respuesta: ""
+    }, {
+        id: 1,
+        pregunta: "",
+        respuesta: ""
+        }, {
+        id: 2,
+        pregunta: "",
+        respuesta: ""
+        }
+    ]
+
+let deporte = [{
+    id: 0,
+    pregunta: "",
+    respuesta: ""
+    }, {
+        id: 1,
+        pregunta: "",
+        respuesta: ""
+        }, {
+        id: 2,
+        pregunta: "",
+        respuesta: ""
+        }
+    ]
+
+let categorias = [
+    {
+    id: 0,
+    nombre: ciencia
+    },
+    {
+    id: 1,
+    nombre: historia
+    },
+    {
+    id: 2,
+    nombre: literatura
+    }, {
+    id: 3,
+    nombre: deporte
+    }
+]
+
+while (jugadores[0].ganador === false && jugadores[1].ganador === false) {
+let currentPlayer = 1;
+let contadorCiencia = 0;
+let contadorHistoria = 0;
+let contadorLiteratura = 0;
+let contadorDeporte = 0;
+let catRandom = Math.floor(Math.random() * 3.9);
+if (currentPlayer === 1) {
+    switch(catRandom){
+    case 0:
+    var preguntaCiencia=prompt(ciencia[contadorCiencia].pregunta);
+    if(preguntaCiencia===ciencia[contadorCiencia].respuesta){
+    jugadores[0].ciencia=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 2");
+        currentPlayer=2;
+    }
+    
+    contadorCiencia++
+    break;
+    case 1:
+    var preguntaHistoria=prompt(historia[contadorHistoria].pregunta);
+    if(preguntaHistoria===historia[contadorHistoria].respuesta){
+    jugadores[0].historia=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 2");
+        currentPlayer=2;
+    }
+    
+    contadorHistoria++;
+    break;
+    case 2:
+    var preguntaLiteratura=prompt(literatura[contadorLiteratura].pregunta);
+    if(preguntaLiteratura===literatura[contadorLiteratura].respuesta){
+    jugadores[0].literatura=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 2");
+        currentPlayer=2;
+    }
+    
+    contadorLiteratura++;
+    break;
+    case 3:
+    var preguntaDeporte=prompt(deporte[contadorDeporte].pregunta);
+    if(preguntaDeporte===deporte[contadorDeporte].respuesta){
+    jugadores[0].deporte=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 2");
+        currentPlayer=2;
+    }
+    
+    contadorDeporte++;
+    break;
+    }
+} else if (currentPlayer === 2) {
+
+}
+if (jugadores[0].ciencia === true && jugadores[0].historia === true && jugadores[0].literatura === true && jugadores[0].ocio === true) {
+    jugadores[0].ganador = true;
+}
+if (jugadores[1].ciencia === true && jugadores[1].historia === true && jugadores[1].literatura === true && jugadores[1].ocio === true) {
+    jugadores[1].ganador = true;
+}
+
+</script>
