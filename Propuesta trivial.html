@@ -101,6 +101,7 @@ let contadorDeporte = 0;
 while (jugadores[0].ganador === false && jugadores[1].ganador === false) {
 let catRandom = Math.floor(Math.random() * 3.9);
 if (currentPlayer === 1) {
+    alert("Es el turno del jugador 1")
     switch(catRandom){
     case 0:
     var preguntaCiencia=prompt(ciencia[contadorCiencia].pregunta);
@@ -156,6 +157,7 @@ if (currentPlayer === 1) {
     break;
     }
 } else if (currentPlayer === 2) {
+    alert("Es el turno del jugador 2")
     switch(catRandom){
     case 0:
     var preguntaCiencia=prompt(ciencia[contadorCiencia].pregunta);
@@ -219,8 +221,8 @@ if (jugadores[1].ciencia === true && jugadores[1].historia === true && jugadores
 }
 }
 if (jugadores[0].ganador === true) {
-    alert(`El ganador ha sido el jugador ${jugadores[0].name}`)
+    alert(`El ganador ha sido el jugador 1`)
 } else {
-    alert(`El ganador ha sido el jugador ${jugadores[1].name}`)
+    alert(`El ganador ha sido el jugador 2`)
 }
 </script>
