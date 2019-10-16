@@ -93,13 +93,12 @@ let categorias = [
     nombre: deporte
     }
 ]
-
-while (jugadores[0].ganador === false && jugadores[1].ganador === false) {
 let currentPlayer = 1;
 let contadorCiencia = 0;
 let contadorHistoria = 0;
 let contadorLiteratura = 0;
 let contadorDeporte = 0;
+while (jugadores[0].ganador === false && jugadores[1].ganador === false) {
 let catRandom = Math.floor(Math.random() * 3.9);
 if (currentPlayer === 1) {
     switch(catRandom){
@@ -211,11 +210,17 @@ if (currentPlayer === 1) {
     contadorDeporte++;
     break;
 }
+}
 if (jugadores[0].ciencia === true && jugadores[0].historia === true && jugadores[0].literatura === true && jugadores[0].ocio === true) {
     jugadores[0].ganador = true;
 }
 if (jugadores[1].ciencia === true && jugadores[1].historia === true && jugadores[1].literatura === true && jugadores[1].ocio === true) {
     jugadores[1].ganador = true;
 }
-
+}
+if (jugadores[0].ganador === true) {
+    alert(`El ganador ha sido el jugador ${jugadores[0].name}`)
+} else {
+    alert(`El ganador ha sido el jugador ${jugadores[1].name}`)
+}
 </script>
