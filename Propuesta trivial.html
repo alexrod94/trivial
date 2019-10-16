@@ -18,60 +18,60 @@ let jugadores = [
 ]
 let ciencia = [{
 id: 0,
-pregunta: "Quién inventó el telescopio reflector?",
+pregunta: "Quién inventó el telescopio reflector? \n -Hans Lippershey \n -Isaac Newton \n -Zacharias Janssen",
 respuesta: "Isaac Newton"
 }, {
     id: 1,
-    pregunta: "¿Quién descubrió la Penicilina?",
+    pregunta: "¿Quién descubrió la Penicilina? \n -Wilhelm RoentgenLouis \n -Alexander Fleming \n -Johan Friedrich Miescher",
     respuesta: "Alexander Fleming"
     }, {
     id: 2,
-    pregunta: "¿Cuál misión espacial logró el primer descenso en la luna de la historia?",
+    pregunta: "¿Cuál misión espacial logró el primer descenso en la luna de la historia? \n -Apolo 1 \n -Saturno 5 \n -Apolo 11" ,
     respuesta: "Apolo 11"
     }
 ]
 
 let historia = [{
     id: 0,
-    pregunta: "¿Qué ciudad española era conocida como 'Lucentum' por los romanos?",
+    pregunta: "¿Qué ciudad española era conocida como 'Lucentum' por los romanos? \n -Alicante \n -Murcia \n -Lugo",
     respuesta: "Alicante"
     }, {
         id: 1,
-        pregunta: "¿En qué año viajó el primer hombre a la Luna?",
+        pregunta: "¿En qué año viajó el primer hombre a la Luna? \n -1970 \n -1968 \n -1969",
         respuesta: "1969"
         }, {
         id: 2,
-        pregunta: "¿Qué motivó la rebelión que dio lugar a la Guerra de la Independencia de EEUU?",
+        pregunta: "¿Qué motivó la rebelión que dio lugar a la Guerra de la Independencia de EEUU? \n -Impuesto \n -Esclavitud \n -Represión ",
         respuesta: "Impuesto"
         }
     ]
 
 let literatura = [{
     id: 0,
-    pregunta: "¿Quién escribió 'La Ilíada'",
+    pregunta: "¿Quién escribió 'La Ilíada'? \n -Marco Tulio Ciceron \n -Seneca \n -Homero",
     respuesta: "Homero"
     }, {
         id: 1,
-        pregunta: "¿Cual es el autor de 'El arte de la guerra'?",
+        pregunta: "¿Cual es el autor de 'El arte de la guerra'? \n -Sun Tzu \n -Shi Jing \n -Dao De Jing ",
         respuesta: "Sun Tzu"
         }, {
         id: 2,
-        pregunta: "¿Quién es el autor de la 'Divina comedia'?",
+        pregunta: "¿Quién es el autor de la 'Divina comedia'? \n -Giovanni Bocaccio \n -Dante Alighieri \n -Petrarca",
         respuesta: "Dante Alighieri"
         }
     ]
 
 let deporte = [{
     id: 0,
-    pregunta: "¿Qué selección de fútbol ganó el Mundial de Brasil de 2014?",
+    pregunta: "¿Qué selección de fútbol ganó el Mundial de Brasil de 2014? \n -Holanda\n -Alemania \n -Argentina",
     respuesta: "Alemania"
     }, {
         id: 1,
-        pregunta: "¿Quien es el mejor ajedrecista noruego de la historia?",
+        pregunta: "¿Quien es el mejor ajedrecista noruego de la historia? \n -Magnus Carlsen \n -Fabiano Caruana \n -Garry Kasparov",
         respuesta: "Magnus Carlsen"
         }, {
         id: 2,
-        pregunta: " ¿Cuántos rounds hay en un combate de boxeo olímpico?",
+        pregunta: " ¿Cuántos rounds hay en un combate de boxeo olímpico? \n -8 \n -3\n -6 ",
         respuesta: "3"
         }
     ]
@@ -211,10 +211,10 @@ if (currentPlayer === 1) {
     break;
 }
 }
-if (jugadores[0].ciencia === true && jugadores[0].historia === true && jugadores[0].literatura === true && jugadores[0].ocio === true) {
+if (jugadores[0].ciencia === true && jugadores[0].historia === true && jugadores[0].literatura === true && jugadores[0].deporte === true) {
     jugadores[0].ganador = true;
 }
-if (jugadores[1].ciencia === true && jugadores[1].historia === true && jugadores[1].literatura === true && jugadores[1].ocio === true) {
+if (jugadores[1].ciencia === true && jugadores[1].historia === true && jugadores[1].literatura === true && jugadores[1].deporte === true) {
     jugadores[1].ganador = true;
 }
 }
