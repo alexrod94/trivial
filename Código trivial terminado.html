@@ -1,0 +1,260 @@
+<script>
+let jugadores = [
+    {
+        nombre: 1,
+        ciencia: false,
+        historia: false,
+        literatura: false,
+        deporte: false,
+        ganador: false
+    }, {
+        nombre: 2,
+        ciencia: false,
+        historia: false,
+        literatura: false,
+        deporte: false,
+        ganador: false
+    }
+]
+let ciencia = [{
+id: 0,
+pregunta: "¿Quién inventó el telescopio reflector? \n -Hans Lippershey \n -Isaac Newton \n -Zacharias Janssen",
+respuesta: "Isaac Newton"
+}, {
+    id: 1,
+    pregunta: "¿Quién descubrió la Penicilina? \n -Wilhelm RoentgenLouis \n -Alexander Fleming \n -Johan Friedrich Miescher",
+    respuesta: "Alexander Fleming"
+    }, {
+    id: 2,
+    pregunta: "¿Cuál misión espacial logró el primer descenso en la luna de la historia? \n -Apolo 1 \n -Saturno 5 \n -Apolo 11" ,
+    respuesta: "Apolo 11"
+    }, {
+    id: 3,
+    pregunta: "¿Qué mamífero es el único que pone huevos? \n -Emú \n -Ajolote \n -Ornitorrinco",
+    respuesta: "Ornitorrinco"
+    }, {
+    id: 4,
+    pregunta: "¿Cuál es la fórmula química del amoniaco? \n -H2O \n -NH3 \ -NAClO",
+    respuesta: "NH3"
+    }
+]
+
+let historia = [{
+    id: 0,
+    pregunta: "¿Qué ciudad española era conocida como 'Lucentum' por los romanos? \n -Alicante \n -Murcia \n -Lugo",
+    respuesta: "Alicante"
+    }, {
+    id: 1,
+    pregunta: "¿En qué año viajó el primer hombre a la Luna? \n -1970 \n -1968 \n -1969",
+    respuesta: "1969"
+    }, {
+    id: 2,
+    pregunta: "¿Qué motivó la rebelión que dio lugar a la Guerra de la Independencia de EEUU? \n -Impuestos \n -Esclavitud \n -Represión ",
+    respuesta: "Impuestos"
+    }, {
+    id: 3,
+    pregunta: "¿Cuál fue la primera mujer en volar en solitario sobre el Atlántico? \n -Amelia Earhart \n -Rosa Parks \n -Raymonde de Laroche",
+    respuesta: "Amelia Earhart"
+    }, {
+    id: 4,
+    pregunta: "¿Cuánto tiempo duró la Guerra de los 100 Años? \n -100 años \n -116 años \n -95 años",
+    respuesta: "116 años" 
+    }
+    ]
+
+let literatura = [{
+    id: 0,
+    pregunta: "¿Quién escribió 'La Ilíada'? \n -Marco Tulio Ciceron \n -Seneca \n -Homero",
+    respuesta: "Homero"
+    }, {
+        id: 1,
+        pregunta: "¿Cual es el autor de 'El arte de la guerra'? \n -Sun Tzu \n -Shi Jing \n -Dao De Jing ",
+        respuesta: "Sun Tzu"
+        }, {
+        id: 2,
+        pregunta: "¿Quién es el autor de la 'Divina comedia'? \n -Giovanni Bocaccio \n -Dante Alighieri \n -Petrarca",
+        respuesta: "Dante Alighieri"
+        }, {
+        id: 3,
+        pregunta: "¿Qué es un diptongo? \n -La rima característica de los sonetos \n -La secuencia de dos vocales distintas \n -La secuencia de dos consonsantes distintas",
+        respuesta: "La secuencia de dos vocales distintas"
+        }, {
+        id: 4,
+        pregunta: "¿Cómo se llama el libro de Ray Bradbury en el que se queman libros? \n -Rebelión en la granja \n -Farenheit 451 \n -Un mundo feliz",
+        respuesta: "Farenheit 451"
+        }
+    ]
+
+let deporte = [{
+    id: 0,
+    pregunta: "¿Qué selección de fútbol ganó el Mundial de Brasil de 2014? \n -Holanda\n -Alemania \n -Argentina",
+    respuesta: "Alemania"
+    }, {
+        id: 1,
+        pregunta: "¿Quien es el mejor ajedrecista noruego de la historia? \n -Magnus Carlsen \n -Fabiano Caruana \n -Garry Kasparov",
+        respuesta: "Magnus Carlsen"
+        }, {
+        id: 2,
+        pregunta: "¿Cuántos rounds hay en un combate de boxeo olímpico? \n -8 \n -3\n -6 ",
+        respuesta: "3"
+        }, {
+        id: 3,
+        pregunta: "¿Quién fue el campeón del mundo de MotoGP en 2017? \n -Marc Márquez \n -Valentino Rossi \n -Dani Pedrosa",
+        respuesta: "Marc Márquez"
+        }, {
+        id: 4,
+        pregunta: "¿En qué país se juega más a los dardos? \n -República Checa \n -Gran Bretaña \n -Francia",
+        respuesta: "Gran Bretaña"
+        }
+    ]
+
+let categorias = [
+    {
+    id: 0,
+    nombre: ciencia
+    },
+    {
+    id: 1,
+    nombre: historia
+    },
+    {
+    id: 2,
+    nombre: literatura
+    }, {
+    id: 3,
+    nombre: deporte
+    }
+]
+let currentPlayer = 1;
+let contadorCiencia = 0;
+let contadorHistoria = 0;
+let contadorLiteratura = 0;
+let contadorDeporte = 0;
+while (jugadores[0].ganador === false && jugadores[1].ganador === false) {
+let catRandom = Math.floor(Math.random() * 3.9);
+if (currentPlayer === 1) {
+    alert("Es el turno del jugador 1")
+    switch(catRandom){
+    case 0:
+    var preguntaCiencia=prompt(ciencia[contadorCiencia].pregunta);
+    if(preguntaCiencia===ciencia[contadorCiencia].respuesta){
+    jugadores[0].ciencia=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 2");
+        currentPlayer=2;
+    }
+    
+    contadorCiencia++
+    break;
+    case 1:
+    var preguntaHistoria=prompt(historia[contadorHistoria].pregunta);
+    if(preguntaHistoria===historia[contadorHistoria].respuesta){
+    jugadores[0].historia=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 2");
+        currentPlayer=2;
+    }
+    
+    contadorHistoria++;
+    break;
+    case 2:
+    var preguntaLiteratura=prompt(literatura[contadorLiteratura].pregunta);
+    if(preguntaLiteratura===literatura[contadorLiteratura].respuesta){
+    jugadores[0].literatura=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 2");
+        currentPlayer=2;
+    }
+    
+    contadorLiteratura++;
+    break;
+    case 3:
+    var preguntaDeporte=prompt(deporte[contadorDeporte].pregunta);
+    if(preguntaDeporte===deporte[contadorDeporte].respuesta){
+    jugadores[0].deporte=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 2");
+        currentPlayer=2;
+    }
+    
+    contadorDeporte++;
+    break;
+    }
+} else if (currentPlayer === 2) {
+    alert("Es el turno del jugador 2")
+    switch(catRandom){
+    case 0:
+    var preguntaCiencia=prompt(ciencia[contadorCiencia].pregunta);
+    if(preguntaCiencia===ciencia[contadorCiencia].respuesta){
+    jugadores[1].ciencia=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 1");
+        currentPlayer=1;
+    }
+    
+    contadorCiencia++
+    break;
+    case 1:
+    var preguntaHistoria=prompt(historia[contadorHistoria].pregunta);
+    if(preguntaHistoria===historia[contadorHistoria].respuesta){
+    jugadores[1].historia=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 1");
+        currentPlayer=1;
+    }
+    
+    contadorHistoria++;
+    break;
+    case 2:
+    var preguntaLiteratura=prompt(literatura[contadorLiteratura].pregunta);
+    if(preguntaLiteratura===literatura[contadorLiteratura].respuesta){
+    jugadores[1].literatura=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 1");
+        currentPlayer=1;
+    }
+    
+    contadorLiteratura++;
+    break;
+    case 3:
+    var preguntaDeporte=prompt(deporte[contadorDeporte].pregunta);
+    if(preguntaDeporte===deporte[contadorDeporte].respuesta){
+    jugadores[1].deporte=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 1");
+        currentPlayer=1;
+    }
+    
+    contadorDeporte++;
+    break;
+}
+}
+if (jugadores[0].ciencia === true && jugadores[0].historia === true && jugadores[0].literatura === true && jugadores[0].deporte === true) {
+    jugadores[0].ganador = true;
+}
+if (jugadores[1].ciencia === true && jugadores[1].historia === true && jugadores[1].literatura === true && jugadores[1].deporte === true) {
+    jugadores[1].ganador = true;
+}
+}
+if (jugadores[0].ganador === true) {
+    alert(`El ganador ha sido el jugador 1`)
+} else {
+    alert(`El ganador ha sido el jugador 2`)
+}
+</script>
