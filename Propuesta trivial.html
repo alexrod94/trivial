@@ -5,14 +5,14 @@ let jugadores = [
         ciencia: false,
         historia: false,
         literatura: false,
-        ocio: false,
+        deporte: false,
         ganador: false
     }, {
         nombre: 2,
         ciencia: false,
         historia: false,
         literatura: false,
-        ocio: false,
+        deporte: false,
         ganador: false
     }
 ]
@@ -158,7 +158,59 @@ if (currentPlayer === 1) {
     break;
     }
 } else if (currentPlayer === 2) {
-
+    switch(catRandom){
+    case 0:
+    var preguntaCiencia=prompt(ciencia[contadorCiencia].pregunta);
+    if(preguntaCiencia===ciencia[contadorCiencia].respuesta){
+    jugadores[1].ciencia=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 1");
+        currentPlayer=1;
+    }
+    
+    contadorCiencia++
+    break;
+    case 1:
+    var preguntaHistoria=prompt(historia[contadorHistoria].pregunta);
+    if(preguntaHistoria===historia[contadorHistoria].respuesta){
+    jugadores[1].historia=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 1");
+        currentPlayer=1;
+    }
+    
+    contadorHistoria++;
+    break;
+    case 2:
+    var preguntaLiteratura=prompt(literatura[contadorLiteratura].pregunta);
+    if(preguntaLiteratura===literatura[contadorLiteratura].respuesta){
+    jugadores[1].literatura=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 1");
+        currentPlayer=1;
+    }
+    
+    contadorLiteratura++;
+    break;
+    case 3:
+    var preguntaDeporte=prompt(deporte[contadorDeporte].pregunta);
+    if(preguntaDeporte===deporte[contadorDeporte].respuesta){
+    jugadores[1].deporte=true;
+    alert("Has acertado");
+    }
+    else{
+        alert("Has fallado, se pasa al jugador 1");
+        currentPlayer=1;
+    }
+    
+    contadorDeporte++;
+    break;
 }
 if (jugadores[0].ciencia === true && jugadores[0].historia === true && jugadores[0].literatura === true && jugadores[0].ocio === true) {
     jugadores[0].ganador = true;
