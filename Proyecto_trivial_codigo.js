@@ -93,15 +93,18 @@ let categorias = [
     }
 ]
 
-while (jugador[0].ganador === false && jugador[1].ganador === false) {
+while (jugadores[0].ganador === false && jugadores[1].ganador === false) {
 let currentPlayer = 1;
 let contadorCiencia = 0;
 let contadorHistoria = 0;
 let contadorLiteratura = 0;
 let contadorDeporte = 0;
 let catRandom = Math.floor(Math.random() * 3.9)
+let contadorOcio = 0;
+let catRandom = Math.floor(Math.random() * 3.9);
 if (currentPlayer === 1) {
 
+    
 } else if (currentPlayer === 2) {
 
 }
